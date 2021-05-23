@@ -1,7 +1,26 @@
 import React from "react";
-import ReactDOM from "react-dom";
+// we dont need to import react with JSX but it's not working with Parcel
+
+// import ReactDOM from "react-dom";
+import { render } from "react-dom";
 import Pet from "./Pet";
 
+// APP using JSX
+
+const App = () => {
+  return (
+    <div>
+      <h1>Adopt Me!</h1>
+      <Pet name="Luna" animal="dog" breed="Havanese" />
+      <Pet name="Pepper" animal="bird" breed="Cockatiel" />
+      <Pet name="Doink" animal="cat" breed="Mix" />
+    </div>
+  );
+};
+
+render(<App />, document.getElementById("root"));
+
+/* 
 const App = () => {
   return React.createElement("div", {}, [
     React.createElement("h1", {}, "Adopt Me!"),
@@ -24,3 +43,4 @@ const App = () => {
 };
 
 ReactDOM.render(React.createElement(App), document.getElementById("root"));
+ */
